@@ -1,0 +1,28 @@
+<h1><{{ greeting }}> World</h1>
+
+<div>
+  <p>
+    Lorem ipsum...
+  </p>
+  <input type="text" [(ngModel)]="greeting" />
+  {{ myNumber | number:'3.1-5' }}
+  <input type="number" [(ngModel)]="myNumber" />
+  <button type="button"
+    [disabled]="!isEnabled()">
+    Do some magic
+  </button>
+</div>
+<div class="warning" *ngIf="myNumber > 100">
+  Achtung! Wert ist viel zu hoch!
+</div>
+<ul>
+  <li *ngFor="let item of todoItems; index as i; even as e"
+    [class.zebra-stripe]="e" [class.warning]="item === 'Hochzeitstag'"
+    [style.fontSize]="e ? '50px' : '10px'">
+    {{ i + 1 }}: {{ item }}
+  </li>
+</ul>
+<input type="text" [(ngModel)]="itemToAdd" />
+<button (click)="addTodoItem()">
+  Add to todo items
+</button>

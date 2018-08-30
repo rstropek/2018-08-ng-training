@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <td>Start Value:</td>
+    <td><input type="number" [(ngModel)]="startValue" /></td>
+  </tr>
+  <tr>
+    <td>Height:</td>
+    <td><input type="number" [(ngModel)]="height" /></td>
+    <td *ngIf="!isModelValid()" class="warning">Height must be &gt;= 2</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><button type="button" (click)="calculate()" [disabled]="!isModelValid()">Calculate</button></td>
+  </tr>
+</table>
+
+<table>
+  <tr *ngFor="let row of turmRows">
+    <td class="alignRight">{{ row.baseValue }}</td>
+    <td>{{ row.operator }}</td>
+    <td>{{ row.multiplicator }}</td>
+    <td>=</td>
+    <td>{{ row.result }}</td>
+  </tr>
+</table>

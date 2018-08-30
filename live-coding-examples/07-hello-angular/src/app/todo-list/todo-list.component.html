@@ -1,0 +1,33 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Assigned to</th>
+  </tr>
+  <tr *ngFor="let todoItem of todoList | async">
+    <td>{{ todoItem.id }}</td>
+    <td>{{ todoItem.description }}</td>
+    <td>{{ todoItem.assignedTo }}</td>
+  </tr>
+</table>
+
+<h2>Hinzufügen...</h2>
+
+<table>
+  <tr>
+    <td>Description:</td>
+    <td><input type="text" [(ngModel)]="description" /></td>
+  </tr>
+  <tr>
+    <td>Assigned to:</td>
+    <td><input type="text" [(ngModel)]="assignedTo"/></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button (click)="save()">Save</button></td>
+  </tr>
+</table>
+
+<div class="error" *ngIf="showError">
+  Ups, something happened...
+</div>
