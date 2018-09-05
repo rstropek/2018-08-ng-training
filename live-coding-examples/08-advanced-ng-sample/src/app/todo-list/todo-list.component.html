@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let todoItem of todoItems | async">
+    <a [routerLink]="todoItem.id">{{ todoItem.description }}</a>
+  </li>
+</ul>

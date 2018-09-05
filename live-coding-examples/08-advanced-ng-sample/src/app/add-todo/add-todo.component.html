@@ -1,0 +1,21 @@
+<form #myForm="ngForm">
+  <mat-form-field class="full-width">
+    <input matInput placeholder="ID of the todo item" type="number" [(ngModel)]="todoItem.id"
+      appRevenueInput #id="ngModel" name="id">
+  </mat-form-field>
+  {{ id.errors | json }}
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Description" type="text" [(ngModel)]="todoItem.description"
+      name="description" required maxlength="10" minlength="3" #description="ngModel">
+  </mat-form-field>
+  <p *ngIf="description.errors && description.errors.required" class="mat-caption">
+    You have to enter a description!
+  </p>
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Assigned to" type="text">
+  </mat-form-field>
+
+  <button mat-button>Save</button>
+</form>
