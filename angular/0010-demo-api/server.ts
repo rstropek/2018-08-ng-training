@@ -21,7 +21,13 @@ let lastId = 0;
 
 const router = new Router();
 
+function wait(ms: number): Promise<void> {
+  return new Promise<void>(res => setTimeout(() => res(), ms));
+}
+
 router.get('/api/people', async (context) => {
+  await wait(3000);
+
   // Return people
   context.body = people;
 });
