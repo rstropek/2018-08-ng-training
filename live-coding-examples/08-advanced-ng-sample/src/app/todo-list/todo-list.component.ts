@@ -10,6 +10,7 @@ import { retry, map, catchError } from 'rxjs/operators';
 })
 export class TodoListComponent implements OnInit {
 
+  public currentPage = 7;
   public todoItems: Observable<any[]>;
 
   constructor(private httpClient: HttpClient) { }
@@ -17,6 +18,10 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
     this.todoItems = this.httpClient.get<any[]>('http://localhost:8080/api/todos')
       .pipe(retry(3), catchError((err, _) => { console.error(err); return _; }));
+  }
+
+  public onNextPage() {
+    console.log('next page');
   }
 
 }

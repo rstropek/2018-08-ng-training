@@ -12,11 +12,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {TodoDetailsComponent} from './todo-details/todo-details.component';
 import {TodoListComponent} from './todo-list/todo-list.component';
+import { InOutComponent } from './in-out/in-out.component';
 
 @NgModule({
   declarations: [
     AppComponent, TodoListComponent, AddTodoComponent, TodoDetailsComponent,
-    RevenueValidatorDirective, AddTodoReactiveComponent
+    RevenueValidatorDirective, AddTodoReactiveComponent, InOutComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatToolbarModule,

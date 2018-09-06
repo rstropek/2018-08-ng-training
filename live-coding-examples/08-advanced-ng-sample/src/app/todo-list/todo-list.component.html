@@ -3,3 +3,5 @@
     <a [routerLink]="todoItem.id">{{ todoItem.description }}</a>
   </li>
 </ul>
+
+<app-in-out [page]="currentPage" (nextPage)="onNextPage()"></app-in-out>
